@@ -4,8 +4,8 @@ const password = document.getElementById("password");
 const btnValidar = document.querySelector(".btn-enviar");
 const aviso = document.querySelector(".texto-aviso");
 
-const correoRegrex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-]))+$/;
-const contraseñaRegrex = /^.{1,5}$/;
+const correoRegex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-]))+$/;
+const contraseñaRegex = /^.{1,5}$/;
 
 //------ Validación ------//
 btnValidar.addEventListener('click', e => {
@@ -21,11 +21,11 @@ btnValidar.addEventListener('click', e => {
         mostrarAviso("Ingresa una contraseña válida");
     }
 
-    else if(!correoRegrex.test(correo)){
+    else if(!correoRegex.test(correo)){
         mostrarAviso("Ingresa un correo electrónico válido");
     }
 
-    else if(!contraseñaRegrex.test(contraseña)){
+    else if(!contraseñaRegex.test(contraseña)){
         mostrarAviso("Ingrese una contraseña válida debe contener 5 caracteres");
     }
 
